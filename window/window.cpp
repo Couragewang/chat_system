@@ -47,15 +47,15 @@ void chat_window::draw_header()
 
 void chat_window::win_refresh(WINDOW* _win)
 {
-	box(_win, 0, 0);
-	wrefresh(_win);
+	box(_win, 0, 0);//绘制边框
+	wrefresh(_win); //刷新窗口
 }
 
 void chat_window::clear_win_line(WINDOW *_win, int begin, int num)
 {
 	while( num-- > 0 ){
 		wmove(_win, begin++, 0);
-		wclrtoeol(_win);
+		wclrtoeol(_win);//clrtoeol是从光标位置清除到光标所在行的结尾
 	}
 }
 
